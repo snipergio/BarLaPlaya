@@ -1,0 +1,240 @@
+/* Personalizzazione dell'H4 */
+h4 {
+    --pico-color: rgb(39, 59, 65) !important;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to bottom, #fffdd0, #8a6642, rgba(0, 0, 0, 0)); /* Gradiente che sfuma verso trasparente */
+    justify-content: center;
+    padding-bottom: 20px; /* Aggiunta di spazio per una transizione più morbida */
+}
+
+/* Logo centrato */
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.volber {
+    display: flex;
+    justify-content: center;
+}
+
+/* Logo centrato */
+.instagram {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+    max-height: 120px;
+}
+
+.inst img {
+    max-width: 40%;
+    height: auto;
+    max-height: 40px;
+}
+
+/* Corpo principale */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: black; /* Sfondo nero fisso per il body */
+    color: white; /* Colore del testo bianco */
+    display: flex; /* Utilizzo di Flexbox per la struttura della pagina */
+    flex-direction: column; /* Allineamento verticale */
+    height: 100%; /* Imposta l'altezza della pagina al 100% della finestra */
+    position: relative;
+    flex: 1; /* Il corpo prende tutto lo spazio disponibile */
+}
+
+/* Header */
+h1, h2 {
+    text-align: center; /* Centrato */
+    opacity: 0;
+    transform: translateX(-100%); /* Inizialmente fuori dalla vista a sinistra */
+    animation: slideIn 3s ease-out forwards; /* Applicazione dell'animazione */
+}
+
+/* Modifica del font per il titolo Drink List */
+h2 {
+    font-family: Geneva, sans-serif;
+    animation-delay: 1s; /* Ritardo per "Drink List" dopo "Winter Edition" */
+}
+
+/* Definisce l'animazione da sinistra a destra */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%); /* Inizia fuori dalla vista a sinistra */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Si sposta nella posizione originale */
+    }
+}
+
+/* Stile per la frase descrittiva */
+.phrase {
+    opacity: 0;
+    transform: translateY(30px); /* Inizialmente sotto */
+    animation: fadeIn 5s ease-out forwards;
+    font-style: italic !important;
+}
+
+/* Stile per il prezzo */
+.price {
+    font-weight: bold;
+    color: rgb(39, 59, 65);
+    margin-left: 10px; /* Distanza tra il nome del drink e il prezzo */
+}
+
+/* Definiamo l'animazione fadeIn per la frase */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 80%;
+    background-color: black !important; /* Cambia il colore di sfondo */
+    border: none;
+}
+
+/* Dettagli dell'accordion */
+details {
+    margin: 0; /* Rimuove margine extra tra gli accordion */
+    padding: 0; /* Rimuove padding aggiuntivo */
+    background-color: black; /* Colore di sfondo nero */
+    border: none; /* Rimuove eventuali bordi */
+}
+
+/* Dettagli dell'accordion quando è aperto */
+details[open] {
+    margin: 0 !important; /* Evita margini extra quando l'accordion è aperto */
+    padding: 0 !important; /* Evita padding extra quando l'accordion è aperto */
+}
+
+/* Dettagli dell'accordion: titolo */
+details summary {
+    color: white !important; /* Colore bianco per il testo del titolo dell'accordion */
+    font-size: 18px !important; /* Aumenta la dimensione del titolo */
+    font-weight: bold !important; /* Rende il titolo in grassetto */
+    padding: 10px; /* Spazio extra per un aspetto migliore */
+    display: flex; /* Usa flexbox per allineare gli elementi orizzontalmente */
+    justify-content: space-between; /* Allinea il nome del drink e il prezzo/freccia ai lati opposti */
+    align-items: center; /* Allinea verticalmente gli elementi */
+    position: relative; /* Necessario per la gestione degli elementi flex */
+    background-color: black; /* Colore di sfondo per il titolo dell'accordion */
+    border-bottom: 1px solid #444444; /* Bordo sottile per separare le sezioni */
+    margin-bottom: 0 !important; /* Evita spazi bianchi sotto */
+}
+
+/* Stile per gli item all'interno dell'accordion */
+details li {
+    margin: 0 !important; /* Rimuove margini extra tra gli item */
+    padding: 5px 0 !important; /* Aggiunge un piccolo padding verticale */
+    background-color: black; /* Sfondo scuro per gli item dell'accordion */
+    color: white !important; /* Testo bianco */
+    font-size: 14px !important; /* Riduce la dimensione del testo rispetto al titolo */
+    font-style: italic !important; /* Testo in corsivo */
+}
+
+/* Se l'accordion è aperto, assicurati che il testo rimanga visibile */
+details[open] summary {
+    background-color: black; /* Colore di sfondo quando l'accordion è aperto */
+    color: white !important; /* Rende il titolo bianco anche quando l'accordion è aperto */
+}
+
+/* Rimuove la freccia di default */
+details summary::after {
+    content: none; /* Rimuove la freccia originale */
+}
+
+/* Rimuove il padding/margine extra degli items quando l'accordion è aperto */
+details[open] li {
+    color: white !important; /* Colore del testo degli items quando l'accordion è aperto */
+    background-color: black; /* Colore di sfondo scuro per gli items quando l'accordion è aperto */
+}
+
+/* Stili generali per il footer */
+footer {
+    background: linear-gradient(to bottom, #000000, #8a6642, #fffdd0); /* Sfumatura dal nero verso il colore del footer */
+    color: rgb(39, 59, 65); /* Colore del testo nel footer */
+    padding: 20px 0; /* Spaziatura interna */
+    text-align: center; /* Centra il testo */
+    font-family: Arial, sans-serif; /* Font del footer */
+    font-size: 12px;
+    width: 100%; /* Il footer occupa tutta la larghezza */
+    margin-top: auto; /* Spinge il footer verso il basso */
+}
+
+/* Stile per i link nel footer */
+footer a {
+    color: rgb(39, 59, 65); /* Colore dei link */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    margin: 0 10px; /* Spaziatura tra i link */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Sottolineatura al passaggio del mouse */
+}
+
+/* Stile per il testo all'interno del footer */
+footer p {
+    color: rgb(39, 59, 65);
+    font-size: 14px; /* Dimensione del testo */
+    margin: 10px 0; /* Spaziatura tra i paragrafi */
+}
+
+/* Layout generale per l'intera pagina */
+html, body {
+    height: 100%; /* Imposta l'altezza di html e body al 100% */
+    margin: 0; /* Rimuovi margini extra */
+    padding: 0; /* Rimuovi padding extra */
+    display: flex; /* Utilizza Flexbox */
+    flex-direction: column; /* Allinea gli elementi in verticale */
+}
+
+/* Dettagli dell'accordion */
+details summary .price {
+    font-weight: bold;
+    color: rgb(39, 59, 65);
+    margin-left: 10px; /* Distanza tra il nome del drink e il prezzo */
+    margin-right: 15px; /* Spostato il prezzo a sinistra, per fare spazio alla freccia */
+    position: relative;
+}
+
+details summary .accordion-arrow {
+    margin-left: 10px; /* Spazio tra il prezzo e la freccia */
+    position: absolute;
+    right: 0; /* Posiziona la freccia a destra */
+}
+
+/* Rimuove la freccia di default */
+details summary::after {
+    content: none; /* Rimuove la freccia duplicata sotto l'accordion */
+}
+
+/* Corpo principale */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 

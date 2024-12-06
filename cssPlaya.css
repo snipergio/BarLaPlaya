@@ -1,0 +1,132 @@
+h4 {
+    --pico-color: rgb(39, 59, 65) !important;
+    
+}
+
+/* Logo centrato */
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+/* Logo centrato */
+.instagram {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+    max-height: 160px;
+}
+.inst img {
+    max-width: 40%;
+    height: auto;
+    max-height: 40px;
+}
+
+
+/* Corpo principale */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #fffdd0, #8a6642) !important;
+}
+
+/* Header */
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+/* Stile dei bottoni */
+button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 80%;
+    background-color: #434750 !important; /* Cambia qui il colore di sfondo */
+    border: none;
+}
+
+/* Aggiungi spazio tra gli accordion e il resto del contenuto */
+main {
+    margin-top: 80px;
+}
+
+/* Spaziatura tra gli accordion */
+details {
+    margin-top: 30px;
+}
+
+/* Evidenziazione per gli accordion visibili */
+.highlight {
+    background-color: rgba(0, 0, 255, 0.2); /* Colore di sfondo per evidenziare */
+    border: 2px solid blue; /* Aggiungi un bordo blu */
+}
+
+/* Media Queries per dispositivi mobili */
+@media (max-width: 600px) {
+    h1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    main {
+        margin-top: 120px;
+    }
+}
+
+@media (max-width: 1024px) {
+    button {
+        width: 70%;
+    }
+}
+/* Stile per il prezzo */
+.price {
+    font-weight: bold;
+    color: rgb(39, 59, 65);
+    float: right; /* Posiziona il prezzo a destra */
+    margin-left: 10px; /* Distanza tra il testo e il prezzo */
+}
+/* Stili generali per il footer */
+footer {
+  background: linear-gradient(to right, #fffdd0, #8a6642) !important;
+  background: linear-gradient(to top, #434750);* Sfumatura dal colore del footer *
+  color: rgb(39, 59, 65); /* Testi bianchi */
+  padding: 20px 0; /* Spazio interno */
+  text-align: center; /* Centra il testo */
+  font-family: Arial, sans-serif; /* Font di base */
+  font-size: 12px;
+}
+
+/* Stile per i link nel footer */
+footer a {
+  color: white; /* Colore dei link */
+  text-decoration: none; /* Rimuove la sottolineatura */
+  margin: 0 10px; /* Spaziatura tra i link */
+}
+
+footer a:hover {
+  text-decoration: underline; /* Sottolineatura al passaggio del mouse */
+}
+
+/* Stile per il testo all'interno del footer */
+footer p {
+  color: rgb(39, 59, 65);
+  font-size: 14px; /* Dimensione del testo */
+  margin: 10px 0; /* Spaziatura tra i paragrafi */
+}
+
