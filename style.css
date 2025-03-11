@@ -1,0 +1,237 @@
+/* Resetta margini e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stili generali per il body */
+body {
+    font-family: 'Raleway', sans-serif;
+    height: 100%; /* Cambiato per evitare un contenuto visibile solo da una sezione in poi */
+    text-align: center;
+    color: white;
+    font-style: italic; /* Tutte le scritte in corsivo */
+    overflow-x: hidden; /* Previene la barra di scorrimento orizzontale */
+    position: relative; /* Necessario per l'elemento pseudo */
+}
+
+/* Sfondo fisso per desktop e mobile */
+body::before {
+    content: ''; 
+    position: fixed; /* Usa position: fixed per garantire il comportamento su mobile */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/sfondoa.jpg'); /* Percorso dell'immagine */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Assicura che lo sfondo stia dietro il contenuto */
+}
+
+/* Contenitore principale */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    background: rgba(0, 0, 0, 0.3); /* Sfondo semitrasparente per migliorare la leggibilità */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+/* Stile del menu */
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Assicurati che il menu parta dall'alto */
+    padding-top: 20px; /* Distanza dall'inizio del contenuto */
+}
+
+/* Sezioni di cocktails */
+.section {
+    width: 100%;
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    position: relative;
+    padding-top: 20px; /* Ridotto il padding in modo che non ci sia spazio eccessivo */
+}
+
+/* Titolo cocktail */
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Cocktail */
+.cocktail {
+    background-color: rgba(255, 255, 255, 0.2); /* Sfondo semi-trasparente dei cocktail */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: left;
+    backdrop-filter: blur(5px); /* Aggiunge un effetto di sfocatura per il contenuto sottostante */
+    opacity: 0;
+    transform: translateX(-100%); /* Partono fuori schermo a sinistra */
+    transition: opacity 0.6s, transform 0.6s; /* Animazione dolce */
+}
+
+/* Titolo cocktail */
+.cocktail h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Descrizione e prezzo */
+.description {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Ingredienti */
+.ingredients {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+/* Toggle per la descrizione */
+.toggle-description .toggle-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.description-content {
+    display: none;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.description-content.show {
+    display: block;
+}
+
+/* Animazione: entra da sinistra */
+.anim-entry.show {
+    opacity: 1;
+    transform: translateX(0); /* Vengono inquadrati nel loro posto */
+}
+
+/* Layout per schermi più piccoli */
+@media (max-width: 768px) {
+    .section {
+        width: 100%;
+        margin: 20px 0;
+        padding-top: 30px; /* Riduci padding su mobile */
+    }
+
+    .cocktail h3 {
+        font-size: 1.2rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .price {
+        font-size: 1.1rem;
+    }
+}
+
+/* Contenitore del logo */
+.logo-container {
+    text-align: center;  /* Centra orizzontalmente */
+    margin-bottom: 20px;  /* Distanza tra il logo e la scritta 'La DrinkList' */
+}
+
+/* Logo */
+.logo {
+    max-width: 150px;  /* Limita la larghezza massima del logo */
+    height: auto;  /* Mantiene le proporzioni del logo */
+} 
+/* Sezione dei loghi */
+.logo-section {
+    display: flex;
+    justify-content: center; /* Centra i loghi orizzontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 20px; /* Distanza tra i loghi */
+    margin-top: 20px; /* Distanza dalla parte superiore della pagina */
+    margin-bottom: 40px; /* Distanza dalla sezione successiva */
+}
+
+/* Elemento del logo */
+.logo-item img {
+    width: 50px; /* Dimensione base dei loghi */
+    height: auto;
+    transition: transform 0.3s ease; /* Transizione per animazioni (es. hover) */
+}
+
+/* Logo centrale leggermente più grande */
+.central-logo img {
+    width: 70px; /* Logo centrale più grande */
+}
+
+/* Effetto hover per evidenziare i loghi */
+.logo-item img:hover {
+    transform: scale(1.1); /* Aumenta la dimensione del logo quando viene passato sopra il mouse */
+}
+/* Animazione per i loghi */
+@keyframes logo-entry {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px); /* Inizia fuori schermo a sinistra */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Arriva nella posizione finale */
+    }
+}
+
+/* Stile per la sezione dei loghi */
+.logo-item {
+    opacity: 0; /* Inizialmente invisibile */
+    animation: logo-entry 1s ease-out forwards; /* Animazione che dura 1s */
+}
+
+/* Ritardo per fare entrare i loghi uno alla volta */
+.logo-item:nth-child(1) {
+    animation-delay: 1s; /* Primo logo dopo 2 secondi */
+}
+
+.logo-item:nth-child(2) {
+    animation-delay: 2.2s; /* Secondo logo con un ritardo di 0.2s */
+}
+
+.logo-item:nth-child(3) {
+    animation-delay: 2.4s; /* Terzo logo con un ritardo di 0.4s */
+}
+
+.logo-item:nth-child(4) {
+    animation-delay: 2.6s; /* Quarto logo con un ritardo di 0.6s */
+}
+footer {
+    text-align: center; /* Centra tutto il testo nel footer */
+    margin-top: 40px; /* Distanza dal contenuto sopra, se desideri aggiungere uno spazio */
+}
+
+footer b, footer p {
+    display: inline-block; /* Permette di centrare i blocchi di testo */
+    text-align: center;
+}

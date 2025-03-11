@@ -1,0 +1,198 @@
+/* Reset base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo della pagina */
+/* Corpo della pagina */
+/* Corpo della pagina */
+body {
+    font-family: 'Raleway', sans-serif;
+    background-image: url('images/sfondo2.jpg'); /* Aggiungi l'immagine di sfondo qui */
+    color: #fff; /* Testo bianco */
+    padding: 20px;
+    background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
+    background-size: cover; /* Fa sì che l'immagine copra tutta la pagina */
+    background-position: center; /* Posiziona l'immagine al centro */
+    background-attachment: fixed; /* Aggiunge un effetto parallax (facoltativo) */
+}
+
+/* Versione mobile */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* Rimuovi l'effetto parallax per la versione mobile */
+        background-size: 100% 100%; /* Fa sì che l'immagine occupi tutta l'area (sia in altezza che in larghezza) */
+        background-position: center center; /* Posiziona l'immagine al centro */
+    }
+}
+
+
+
+/* Heading (prima sezione) */
+.heading p {
+    font-size: 2em; /* Aumenta la dimensione del testo */
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Aggiunge uno sfondo semi-trasparente */
+    color: #fff; /* Colore del testo (bianco per contrastare lo sfondo scuro) */
+    padding: 10px; /* Distanza tra il testo e il bordo del fondo */
+    border-radius: 8px; /* Angoli arrotondati */
+}
+
+.heading2 p {
+    font-size: 1em; /* Aumenta la dimensione del testo */
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Aggiunge uno sfondo semi-trasparente */
+    color: #fff; /* Colore del testo (bianco per contrastare lo sfondo scuro) */
+    padding: 10px; /* Distanza tra il testo e il bordo del fondo */
+    border-radius: 8px; /* Angoli arrotondati */
+}
+
+/* Logo */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+/* Box immagine dinamica */
+.image-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#dynamic-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.image-caption {
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+/* Puzzle container */
+.puzzle-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6); /* Sfondo trasparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+}
+
+/* Puzzle items */
+.puzzle-item {
+    background-color: rgba(0, 0, 0, 0.7); /* Sfondo scuro per ogni sezione */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.puzzle-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.puzzle-header img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.puzzle-header h3 {
+    color: white;
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+/* Dropdown (menu con prezzi) */
+.puzzle-dropdown {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+}
+
+.puzzle-item:hover .puzzle-dropdown {
+    display: block;
+}
+
+.puzzle-dropdown ul {
+    list-style-type: none;
+}
+
+.puzzle-dropdown ul li {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    color: #fff;
+}
+
+.puzzle-dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+.puzzle-dropdown .price {
+    font-weight: bold;
+}
+
+/* Stile per la versione mobile */
+@media (max-width: 768px) {
+    .puzzle-container {
+        grid-template-columns: 1fr; /* Una sola colonna */
+    }
+
+    .puzzle-item {
+        padding: 20px;
+    }
+
+    .image-box {
+        padding: 10px;
+    }
+
+    .image-caption {
+        font-size: 0.9em;
+    }
+}
+
+/* Hover per i puzzle items */
+.puzzle-item:hover {
+    background-color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+}
+
+/* Aggiungi il focus sulla sezione del puzzle per migliorare l'accessibilità */
+.puzzle-item:focus {
+    outline: 2px solid #fff;
+}
+/* Animazione delle scritte */
+.animate-text {
+    animation: slideIn 2s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.puzzle-dropdown .price {
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end; /* Allinea il contenuto a destra */
+    width: 100%; /* Garantisce che l'elemento occupi tutta la larghezza */
+}
